@@ -29,7 +29,7 @@ const [expense, setExpense] = React.useState(initialExpenses);
          <h1>
           Total Spending : {" "}
           <span className='total'>
-            ${expense.reduce((total,current) => {
+            ${""}{expense.reduce((total,current) => {
               return (total += current.amount);
             },0)}
           </span>
