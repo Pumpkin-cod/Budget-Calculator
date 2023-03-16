@@ -15,21 +15,21 @@ const initialExpenses =[
 // console.log(initialExpenses)
 export default function App() {
 // console.log(useState());
-const [expense, setExpense] = React.useState(initialExpenses);
-// console.log(expense)
+const [expenses, setExpense] = React.useState(initialExpenses);
+// console.log(expenses)
   return(
     <div>
       <Alert />
       <h1>My Budget Calculator</h1>
 
-      <main>
+      <main className='App'>
       <ExpenseForm />
-      <ExpenseList  expenses = {expense}/>
+      <ExpenseList  expenses = {expenses}/>
       </main>
          <h1>
-          Total Spending : {" "}
+          Total Expenditure : {" "}
           <span className='total'>
-            ${""}{expense.reduce((total,current) => {
+            ${""}{expenses.reduce((total,current) => {
               return (total += current.amount);
             },0)}
           </span>
