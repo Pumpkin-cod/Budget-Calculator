@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ExpenseList from './components/ExpenseList';
 import Alert from './components/Alert';
 import ExpenseForm from './components/ExpenseForm';
@@ -6,12 +6,13 @@ import ExpenseForm from './components/ExpenseForm';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 
-const initialExpenses =[
-  { id: uuidv4(), charge: "rent", amount:1600},
-  { id: uuidv4(), charge: "car payment", amount:200},
-  { id: uuidv4(), charge: "Utility payment",amount:1000},
-  { id: uuidv4(), charge: "school fees", amount:2000},
-]
+// const initialExpenses =[
+//   { id: uuidv4(), charge: "rent", amount:1600},
+//   { id: uuidv4(), charge: "car payment", amount:200},
+//   { id: uuidv4(), charge: "Utility payment",amount:1000},
+//   { id: uuidv4(), charge: "school fees", amount:2000},
+// ]
+const initialExpenses = localStorage.getItem('expenses')? JSON.parse(localStorage.getItem('expenses')):[];
 // console.log(initialExpenses)
 export default function App() {
   // statevalues for all my expense
@@ -22,6 +23,11 @@ const [amount, setAmount] = React.useState('')
 const [alert,setAlert]= React.useState({show: false});
 const [edit, setEdit]= React.useState(false);
 const [id, setId] = React.useState(0);
+
+useEffect(() =>{
+  console.log('useEffect')
+  localStorage.setItem('expenses',JSON.stringify(expenses))
+},[expenses])
   // The charge function
   const handleCharge = e =>{
     // console.log(`Charge : ${e.target.value}`)
