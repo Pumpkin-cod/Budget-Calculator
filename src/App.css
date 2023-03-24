@@ -70,7 +70,7 @@ label {
 	width: 100%;
 	font-size: 16px;
 	margin: 10px 0 8px 0;
-	padding: 0;
+	padding-left: 10px;
 }
 .btn {
 	text-decoration: none;
