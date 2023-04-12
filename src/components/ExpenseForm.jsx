@@ -9,7 +9,9 @@ const ExpenseForm = ({
   edit
 }) => {
   return (
+    
     <form onSubmit={handleSubmit}>
+      <h2 className='heading'>Add Expenses</h2>
       <div className="form-center">
         <div className="form-group">
           <label htmlFor="expense">Item</label>

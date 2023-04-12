@@ -21,7 +21,7 @@ body {
 		#2b86c5 100%
 	);
 	background-repeat: no-repeat;
-	height: 100vh;
+	height: 150vh;
 	color: var(--mainBlack);
 	font-family: 'Roboto', sans-serif;
 }
@@ -32,18 +32,43 @@ h1 {
 	color: var(--mainWhite);
 	letter-spacing: 5px;
 }
-.App {
+
+.heading {
+	text-align: center;
+	text-transform: capitalize;
+	margin: 0.5rem 0;
+	letter-spacing: 1px;
+	color: var(--mainWhite);
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+}
+
+/* .App {
 	-webkit-backdrop-filter: blur(16px) saturate(180%);
 	backdrop-filter: blur(16px) saturate(180%);
 	background-color: rgba(255, 255, 255, 0.45);
 	border-radius: 12px;
 	border: 1px solid rgba(209, 213, 219, 0.3);
+	height: 10rem;
+	max-width: 30rem;
+	margin-top: 6rem;	
+} */
 
+.App1 {
+	-webkit-backdrop-filter: blur(16px) saturate(180%);
+	backdrop-filter: blur(16px) saturate(180%);
+	background-color: rgba(255, 255, 255, 0.45);
+	border-radius: 12px;
+	border: 1px solid rgba(209, 213, 219, 0.3);
 	margin: 0 auto;
 	max-width: 1280px;
-	width: 90%;
+	width: 45%;
 	padding-bottom: 3rem;
 }
+
 .form-center {
 	display: flex;
 	padding: 0 1rem;
@@ -88,6 +113,7 @@ label {
 	padding: 0 16px;
 	text-transform: uppercase;
 	margin: 0 auto;
+	margin-bottom: 2rem;
 	cursor: pointer;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -134,6 +160,42 @@ label {
 	font-size: 1.2rem;
 }
 
+.button {
+	text-decoration: none;
+	color: var(--mainWhite);
+	/* background-color: var(--mainGreen); */
+	/* background-color: #c55b98;
+background-image: linear-gradient(225deg, #c55b98 0%, #b389d8 50%, #63a8d8 100%); */
+	background-color: #c55b98;
+	background-image: linear-gradient(
+		225deg,
+		#c55b98 0%,
+		#b389d8 50%,
+		#63a8d8 100%
+	);
+	text-align: center;
+	letter-spacing: 0.1px;
+	font-size: 14px;
+	outline: 0;
+	border: none;
+	border-radius: 4px;
+	display: block;
+	height: 36px;
+	line-height: 36px;
+	padding: 2rem 1rem;
+	text-transform: uppercase;
+	margin: 0 auto;
+	cursor: pointer;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	display: flex;
+	align-items: center;
+}
+
+.button:hover {
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
 .list {
 	margin: 2rem 0.75rem 0 0.75rem;
 	list-style-type: none;
@@ -164,8 +226,8 @@ label {
 .expense {
 	margin-right: 2rem;
 	text-transform: capitalize;
-  color: var(--mainWhite);
-  font-weight: 700;
+	color: var(--mainWhite);
+	font-weight: 700;
 	font-size: 1.2rem;
 }
 .amount {
@@ -225,15 +287,30 @@ label {
 .alert-success {
 	background: var(--mainGreen);
 }
-@media screen and (min-width: 601px) {
-	.App,
+@media screen and (max-width: 900px) {
+	/* .App,
 	.list,
 	.alert {
 		width: 85%;
+	} */
+
+	/* .list {
+		margin: 2rem auto 0 auto;
+	} */
+
+	.container {
+		display: flex;
+		flex-direction: column;
 	}
 
-	.list {
-		margin: 2rem auto 0 auto;
+	.App1 {
+		margin-bottom: 2rem;
+		width: 80%;
+	}
+
+	.button {
+		font-size: 1rem;
+		
 	}
 }
 @media screen and (min-width: 993px) {
